@@ -28,6 +28,23 @@ Our project focuses on the relationship between COVID and sleep deprivation, alc
 ## Limitations
 The researchers stated in their original article that the sample of this study was primarily comprised of white females who are well-educated and from the United States (Massachusetts to be more specific). With that being said, this is going to limit the generalizability of the research finding to other regions of the world, other genders, and ethnicities.  This dataset also contains problems of response bias since users might not submit responses on days when they don’t feel well; subjective assessment which is the nature of this type of study, heavily relied on self-report.
 
+##Paragraph of summary information
+
+
+## Table of  aggregated data & Description of pertinent observations
+
+
+## Chart 1 & Description of the purpose and pertinent observations 
+
+
+## Chart 2 & Description of the purpose and pertinent observations 
+
+
+## Chart 3 & Description of the purpose and pertinent observations 
+
+
+
+
 ```{r}
 ```
 
