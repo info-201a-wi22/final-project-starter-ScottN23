@@ -14,10 +14,10 @@ In the midst of 2020, a severe pandemic broke out all around the world affecting
 **Project Framing:** For our group, the goals for this project is to extract the data provided to us from the “Boston College daily sleep and well-being survey data” designed by Tony Cunningham, Eric Fields, and Elizabeth Kensinger and then reconstruct and present the data in a format that is easy to understand in order to draw conclusions of the impact of COVID-19 on the individuals sleep and mental and physical health. <br /> **Human Values:** Within this project we are going to be focusing on the impact of COVID-19 on the lives of the people that were surveyed within the data set we are using. We are hoping to find the relationship between COIVD-19 and the impacts on the individuals social interactions alongside their mental and physical health as a result of COVID-19. We are deciding to work on this dataset as COVID-19 has heavily affected all of us and we wanted to provide people information on how it has impacted others as well as we are all going through this together. Within this, we find human values as the ability for individuals to have control of their life style however, COVID-19 has placed constraints on everyone’s lives. <br /> **Stakeholders:** The direct stakeholders for our topic of the impact of COVID-19 on sleep and mental and physical health would be data analysts who use the data, the viewers of that data, the individuals surveyed, and the people who would use the data. These people share the knowledge of what the data holds and the goals of the data. For the indirect stakeholders we would say that they are the individuals who could be impacted by the usage of the data whether that be the citizens of an area that a government official uses the data in or somewhere else. <br /> **Possible Benefits & Harms:** The possible benefits of this data is that governments or companies could use the data to provide help for the general public or workers as they would have a deeper understanding of the impacts of COVID-19 on the lives of many individuals which could result in change in the places this is used within. Possible harms for the data is that it could be used to make wrong claims about the impacts of COVID-19 that may downplay the actual effect of COVID-19 which would result in a loss of opportunity to help the individuals severely affected by the pandemic. 
 
 ## Research Questions
-What’s the correlation between sleep quality and COVID-19? 
-What’s the relationship between sleep quality and socialization? 
-What’s the connection between sleep quality and mental health, particularly during COVID-19 time? What's the impact of COVID-19 on an individual's physical health? 
-What's the impact of COVID-19 on the stress level of an individual? 
+**What’s the correlation between sleep quality and COVID-19?**
+**What’s the relationship between sleep quality and socialization?**
+**What’s the connection between sleep quality and mental health, particularly during COVID-19 time? What's the impact of COVID-19 on an individual's physical health?** 
+**What's the impact of COVID-19 on the stress level of an individual?** 
 
 ## Relevance of Research Questions
 We think these questions are important because we understand that COVID-19 has had a large effect on the lifestyles of many individuals and the isolation has significantly impacted many. Whether it had been because of unemployment, isolation, or being exposed to covid itself, COVID-19 has changed the way we live. Particularly, these questions are also important to answer as they will help us understand the impact of stress on sleep and mental health and how COVID-19 has triggered these negative feelings. Knowing these information would allow medical practitioners to help patients to better cope with mental stressors and live a healthier life. We will address these questions by working with the datasets and analyzing them so we can examine the impacts of COVID-19 on varying aspects of individual lives.
@@ -42,21 +42,14 @@ The researchers stated in their original article that the sample of this study w
 
 ## Chart 3 & Description of the purpose and pertinent observations 
 
+```{r echo=FALSE}
 
-
-
-```{r}
 ```
+**Chart explains the COVID-19 Impact on Mental Health. Here, it relates the average total levels of stress to mental health. Here it depicts the difference in mental stress between people with COVID-19 and without COVID-19. Within the chart it depict that those who contracted COVID-19 typically have a higher isolation, stress, and worry level.**
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-## What is this file for?
-
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
 
 ## ACCESSING THE /source DIRECTORY
 ### Example 1: Source some code and run a function
