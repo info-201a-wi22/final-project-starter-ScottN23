@@ -16,12 +16,8 @@ COVID19_sleep_quality <- COVID19_data_cleaned %>%
    mutate(contracted_covid = covid_status == 1) %>%
    mutate(avg_TST = mean(TST, na.rm = TRUE)) 
 
-#Data Visualization
-# COVID_TST_visualization <- ggplot(COVID19_sleep_quality) +
-#   geom_col(mapping = aes(x = avg_TST, y = covid_status, group = covid_status, fill = covid_status)) +
-#   scale_x_continuous(limits=c(0, 8)) +
-#   labs(x = "Average Sleep Time", y = "COVID Status", title = "COVID-19 Impact on Sleep Time") 
-
+#Data visualization: scatter plot to model the relationship between sleep time and difficulty of sleep
+#                    separated by people who contracted covid and those who did not
 COVID_TST_visualization <- ggplot(COVID19_sleep_quality) +
    geom_point(mapping = aes(x = TST, y = sleepdiary_fellasleep, color = contracted_covid)) +
    facet_wrap(~contracted_covid) +
