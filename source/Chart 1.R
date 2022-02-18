@@ -18,7 +18,8 @@ covid_on_physical <- ggplot(COVID19_data_cleaned, aes(x = covid_status, y = soci
   stat_boxplot(geom ='errorbar', width = 0.75) +
   geom_boxplot(show.legend = TRUE, width = 0.5) +
   scale_fill_discrete(name = "Contracted Covid") +
-  labs(x = "Contracted Covid", y = "Socialized Minutes", title = "COVID-19 Impact on Socialized Minutes", subtitle = "Shows the relationship of socialized minutes and people with COVID-19.")
+  coord_flip() +
+  labs(x = "Contracted Covid", y = "Virtual Socialized Minutes", title = "COVID-19 Impact on Virtual Socialized Minutes", subtitle = "Shows the relationship of virtual socialized minutes and people with COVID-19.")
 covid_on_physical
 
 
