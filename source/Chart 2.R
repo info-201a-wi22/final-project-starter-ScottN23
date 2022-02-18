@@ -1,5 +1,5 @@
-library(tidyverse)
-library(plotly)
+library(dplyr)
+library(ggplot2)
 
 COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 
@@ -22,5 +22,3 @@ COVID_TST_visualization <- ggplot(COVID19_sleep_quality) +
    geom_point(mapping = aes(x = TST, y = sleepdiary_fellasleep, color = contracted_covid)) +
    facet_wrap(~contracted_covid) +
    labs(x = "Average Sleep Time", y = "Difficulty of Sleep", title = "COVID-19 Impact on Sleep Quality")
-
-ggplotly(COVID_TST_visualization)
