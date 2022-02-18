@@ -6,7 +6,7 @@ COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stri
 
 #Select columns we need to answer our driving questions
 COVID19_data_cleaned <- COVID19_data %>%
-   select(unique_id, covid_status, TST, sleepdiary_fellasleep, sleepdiary_wakes)
+   select(unique_id, covid_status, TST, sleepdiary_fellasleep)
 
 #Data analysis: correlation between COVID-19 and quality of sleep (indicated by total sleep time)
 COVID19_sleep_quality <- COVID19_data_cleaned %>%
