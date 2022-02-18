@@ -20,3 +20,5 @@ covid_on_physical <- ggplot(COVID19_data_cleaned, aes(x = covid_status, y = soci
   scale_fill_discrete(name = "Contracted Covid") +
   labs(x = "Contracted Covid", y = "Socialized Minutes", title = "COVID-19 Impact on Socialized Minutes", subtitle = "Shows the relationship of socialized minutes and people with COVID-19.")
 covid_on_physical
+
+
