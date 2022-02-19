@@ -36,8 +36,8 @@ The researchers stated in their original article that the sample of this study w
 
 ## Table of aggregated data & Description of pertinent observations
 ```{r echo=FALSE}
-source("../source/Chart 1.R")
-plot(covid_on_physical)
+source("../source/table")
+kable(covid_on_physical)
 ```
 **<br />  **
 
