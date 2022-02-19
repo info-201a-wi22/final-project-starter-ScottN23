@@ -1,4 +1,5 @@
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 
 # Imports table from Covid19 dataset
 COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
