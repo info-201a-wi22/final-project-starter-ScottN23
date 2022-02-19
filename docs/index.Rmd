@@ -53,21 +53,21 @@ library(knitr)
 source("../source/Table.R")
 kable(aggregate_table)
 ```
-<br /> In this aggregated table, you can see the well summarized data for participants’ total sleep time in hours, their difficulty falling asleep on a scale of 1-3 with 1 being the easiest, their total minutes of virtual socialization, their stress level, exercise rate, isolation levels and worry levels — all grouped by their covid status whether they are positive or not. We can clearly see that participants who tested positive for covid had a harder time falling asleep; on average they socialize less online than their peers who tested negative; they experience more stress; have less energy which leads to lower exercise rate; higher isolation level and much higher worry level. There’s a positive correlation between testing positive for COVID and almost all attributes we are looking at, which suggests that COVID is affecting us in many ways other than physical discomfort.
+<br /> In this aggregated table, you can see the summarized data for participants’ total sleep time in hours, their difficulty falling asleep on a scale of 1-3 with 1 being the easiest, their total minutes of virtual socialization, their stress level, exercise rate, isolation levels and worry levels — all grouped by their covid status whether they are positive or not. We can clearly see that participants who tested positive for covid had a harder time falling asleep; on average they socialize less online than their peers who tested negative; they experience more stress; have less energy which leads to lower exercise rate; higher isolation level and much higher worry level. There’s a positive correlation between testing positive for COVID and almost all attributes we are looking at, which suggests that COVID is affecting us in many ways other than physical discomfort.
 
 ## Chart #1 & Description of the purpose and pertinent observations 
 ```{r echo=FALSE}
 source("../source/Chart 1.R")
 plot(covid_on_physical)
 ```
-<br /> **Chart #1** explains the impact of COVID-19 on socialized minutes. Socialization minutes referred to non-physical forms of contact such as phone calls or other means of online contact. Chart #1 depicts the relationship of social minutes of people who contracted COVID-19 and those who did not. Within the chart is showed that median and the quartiles were entirely the same between those who did and did not contract COVID-19. However, there was a difference in the range. We decided to use this chart because it directly connected COVID-19 with online socialization. 
+<br /> **Chart #1** explains the impact of COVID-19 on socialized minutes. Socialization minutes referred to non-physical forms of contact such as phone calls or other means of online contact. Chart #1 depicts the relationship of social minutes of people who contracted COVID-19 and those who did not. Within the chart it showed that median and the quartiles were entirely the same between those who did and did not contract COVID-19. However, there was a difference in the range. We decided to use this chart because it directly connected COVID-19 with online socialization. 
 
 ## Chart #2 & Description of the purpose and pertinent observations 
 ```{r echo=FALSE}
 source("../source/Chart 2.R")
 plot(COVID_TST_visualization)
 ```
-<br /> **Chart #2** explains the impact of COVID-19 on sleep quality. The chart dives into difficulty of sleep verses the average sleep time between folks who contracted COVID and those who did not. The chart portrayed that folks who contracted COVID-19 tend to have a more difficult time of sleeping, and typically had less sleep time compared to their counterparts. This chart allowed us to visualize data between the impact of COVID-19 to sleep.
+<br /> **Chart #2** explains the impact of COVID-19 on sleep quality. The chart dives into difficulty of sleep verses the average sleep time between folks who contracted COVID and those who did not. The chart portrayed that there is a higher proportion of folks who contracted COVID-19 having a more difficult time of sleeping compared to their counterparts. We chose to visualize using this chart because it allows us to visualize the data between the impact of COVID-19 and sleep quality indicated by the total sleep time and the difficulty of sleep.
 
 ## Chart #3 & Description of the purpose and pertinent observations 
 
