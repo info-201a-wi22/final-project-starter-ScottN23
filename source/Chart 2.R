@@ -10,7 +10,6 @@ COVID19_data_cleaned <- COVID19_data %>%
 
 #Data analysis: correlation between COVID-19 and quality of sleep (indicated by total sleep time)
 COVID19_sleep_quality <- COVID19_data_cleaned %>%
-   drop_na() %>%
    filter(is.na(covid_status) == FALSE, is.na(sleepdiary_fellasleep) == FALSE) %>%
    group_by(covid_status) %>%
    mutate(contracted_covid = covid_status == 1) %>%

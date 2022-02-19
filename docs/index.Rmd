@@ -49,9 +49,9 @@ The researchers stated in their original article that the sample of this study w
 ```{r echo=FALSE}
 library(knitr)
 source("../source/Table.R")
-kable(table)
+kable(aggregate_table)
 ```
-**<br />  **
+**<br /> In this aggregated table, you can see the well summarized data for participants’ total sleep time in hours, their difficulty falling asleep on a scale of 1-3 with 1 being the easiest, their total minutes of virtual socialization, their stress level, exercise rate, isolation levels and worry levels — all grouped by their covid status whether they are positive or not. We can clearly see that participants who tested positive for covid had a harder time falling asleep; on average they socialize less online than their peers who tested negative; they experience more stress; have less energy which leads to lower exercise rate; higher isolation level and much higher worry level. There’s a positive correlation between testing positive for COVID and almost all attributes we are looking at, which suggests that COVID is affecting us in many ways other than physical discomfort.**
 
 ## Chart #1 & Description of the purpose and pertinent observations 
 ```{r echo=FALSE}
