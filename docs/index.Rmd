@@ -32,12 +32,24 @@ Our project focuses on the relationship between COVID to sleep deprivation, alco
 The researchers stated in their original article that the sample of this study was primarily comprised of white females who are well-educated and from the United States (Massachusetts to be more specific). With that being said, this is going to limit the generalization of the research finding to other regions of the world, other genders, and ethnicity. This data set also contains problems of response bias since users might not submit responses on days when they don’t feel well; subjective assessment which is the nature of this type of study, heavily relied on self-report.
 
 ##Paragraph of summary information
+<br /> Variable 1 examines whether there is an association between sleep latency and quarantine. Here, we filtered our data frame by maximum sleep latency, which represents the greatest amount of time for one to fall asleep and check if the subject is quarantining by pulling the `quarantine` variable. As a result, we found that the quarantine status is 1, indicating that the subject with maximum sleep latency is quarantining. This variable is important because it shows that quarantining could contribute to difficulty falling asleep which shows how covid has impacted sleep quality. 
+
+<br /> Variable 2 examines whether there is an association between night awakening time and socializing. Here, we filtered our data frame by maximum night awakening time and check if the subject has socialized by pulling the `socialize` variable. As a result, we found that the socialize status is 0, indicating that the subject with maximum night awakening time is not socializing. This variable is important because it shows that not socializing could contribute to disrupted sleep which shows how covid has impacted sleep quality. 
+
+<br /> Variable 3 examines what proportion of subjects feeling very excited is also socializing. By calculating the total number of subject rating 5 for excitement and the number of subject rating 5 who are also socializing, we are able to find out the proportion of subject feeling excited due to socializing. As a result, we found that about 79.6% of subjects feeling excited is also socializing. This variable is important because it answers the question whether socializing could inflict positive feelings, which made a powerful speech about how COVID had prevented socializing and inhibits positive feelings like excitement.
+
+<br /> Variable 4 examines what proportion of subjects feeling very distressed is also COVID positive. By calculating the total number of subject rating 5 for distressed and the number of subject rating 5 for distressed who are also COVID positive, we are able to find out the proportion of subject feeling distressed related to COVID infection. As a result, we found that about 1.4% of subjects feeling distressed is also COVID positive. This variable is important because it answers the question whether COVID infection could inflict negative feelings like distress.
+
+<br /> Variable 5 examines what proportion of subjects feeling very enthusiastic is also COVID positive. By calculating the total number of subject rating 5 for enthusiasm and the number of subject rating 5 for enthusiasm who are also COVID positive, we are able to find out the proportion of subject feeling enthusiastic related to COVID infection. As a result, we found that about 0.8 % of subjects feeling enthusiastic is also COVID positive. This variable is important because it answers the question whether COVID infection could inflict positive feelings like enthusiasm.
+
+<br /> As a result, by comparing variable 4 and 5, we can make an educated assumption that COVID is more likely to inflict negative feelings rather than positive.**
 
 
 ## Table of aggregated data & Description of pertinent observations
 ```{r echo=FALSE}
-source("../source/table")
-kable(covid_on_physical)
+library(knitr)
+source("../source/Table.R")
+kable(table)
 ```
 **<br />  **
 
