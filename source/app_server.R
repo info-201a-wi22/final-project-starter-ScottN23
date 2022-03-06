@@ -19,10 +19,6 @@ COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stri
 server <- function(input, output) {
   
   output$boxPlot <- renderPlotly({
-    
-    # Generate bins based on input$bins from ui.R
-    output$value <- renderPrint({ input$checkbox })
-    
     # Filter columns that are of use
     COVID19_data_cleaned <- COVID19_data %>%
       select(covid_status, socialize_min)

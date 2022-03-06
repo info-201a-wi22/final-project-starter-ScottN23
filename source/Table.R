@@ -14,6 +14,3 @@ aggregate_table <- COVID19_data %>%
             prop_exercise = round(mean(exercise, na.rm = TRUE), digits = 3),
             isolation_level = round(mean(isolation, na.rm = TRUE), digits = 3),
             worry_level = round(mean(worry_scale, na.rm =TRUE), digits = 3))
-
-
-View(aggregate_table)
