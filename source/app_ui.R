@@ -8,12 +8,9 @@
 #
 
 library(shiny)
-
-# Define UI for application that draws a histogram
-
-
+source("Socialize Chart.R")
 
 ui <- navbarPage(
   title = "Can't Sleep Through The Pandemic",
-  
+  virtual_social_chart
 )
