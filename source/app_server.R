@@ -15,6 +15,7 @@ library(dplyr)
 # Imports table from Covid19 dataset
 COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 
+
 # Define server logic required to draw a histogram
 server <- function(input, output) {
   
@@ -37,4 +38,33 @@ server <- function(input, output) {
     return(covid_socialize)
   })
   
+  
+  
+  ## Mental health output chart
+  output$mh_chart <- renderPlotly({
+      COVID19_mh_data <- COVID19_data %>%
+          group_by(covid_status) %>%
+          filter(!is.na(covid_status)) %>%
+          mutate(covid_status = covid_status == 1) %>%
+          summarize(Stress = mean(stress, na.rm = TRUE),
+                    Isolation = mean(isolation, na.rm = TRUE),
+                    Depression = mean(depression2, na.rm = TRUE),
+                    WorryHealth = mean(worry_health, na.rm = TRUE),
+                    WorryFinances = mean(worry_finances, na.rm = TRUE))
+      
+      mh_chart <- plot_ly(
+          data = COVID19_mh_data,
+          x = input$mental,
+          y = ~.data[[input$mental]],
+          color = ~covid_status,
+          type = "bar"
+      ) %>%
+          layout(
+              title = "Annual CO2 Emission (Total)",
+              xaxis = list(title = input$mental),
+              yaxis = list(title = "Scale Level")
+          )
+      # Return the visualization
+      mh_chart
+  })
 }

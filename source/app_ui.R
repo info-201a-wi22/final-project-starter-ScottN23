@@ -9,8 +9,10 @@
 
 library(shiny)
 source("Socialize Chart.R")
+source("mental_health_chart.R")
 
 ui <- navbarPage(
   title = "Can't Sleep Through The Pandemic",
-  virtual_social_chart
+  virtual_social_chart,
+  mental_health_chart
 )
