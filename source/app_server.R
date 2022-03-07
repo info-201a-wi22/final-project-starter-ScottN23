@@ -27,11 +27,18 @@ server <- function(input, output) {
     COVID19_data_cleaned <- COVID19_data_cleaned %>%
       group_by(covid_status) %>%
       filter(!is.na(covid_status), !is.na(socialize_min)) %>%
-      mutate(covid_status = covid_status == 1) %>%
-      filter(covid_status == input$checkbox)
+      mutate(covid_status = covid_status == 1)
     
+    if(input$radio == 2) {
+      COVID19_data_cleaned <- COVID19_data_cleaned %>%
+        filter(covid_status == TRUE)
+    } else if (input$radio == 3) {
+      COVID19_data_cleaned <- COVID19_data_cleaned %>%
+        filter(covid_status == FALSE)
+    }
     # Draw the box plot with the specified country
-    covid_socialize <- plot_ly(COVID19_data_cleaned, x = ~socialize_min, y = ~covid_status, type = 'box')
+    covid_socialize <- plot_ly(COVID19_data_cleaned, x = ~socialize_min, y = ~covid_status, type = 'box') %>%
+      layout(title = "COVID-19 Status: Virtual Socialized Minutes", xaxis = list(title = "Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"))
     
     # Returns box plot
     return(covid_socialize)
