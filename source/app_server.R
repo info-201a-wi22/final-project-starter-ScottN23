@@ -5,7 +5,7 @@ library(dplyr)
 
 # Imports table from Covid19 dataset
 COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
-
+COVID19_demographics <- read.csv("../data/COVID19_demographics_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
@@ -87,6 +87,27 @@ server <- function(input, output) {
     
     # Returns scatter plot
     return(exercise_scatter_plot)
+  })
+  
+  # Sleep Quality chart (grouped by ages)
+  output$sq_chart <- renderPlotly({
+    
+    COVID19_age_data <- COVID19_data %>%
+      select(sub_id, age1)
+    
+    mh_chart <- plot_ly(
+      data = COVID19_mh_data,
+      x = input$mental,
+      y = ~.data[[input$mental]],
+      color = ~covid_status,
+      type = "bar"
+    ) %>%
+      layout(
+        title = "Mental Health Severity Level",
+        yaxis = list(title = "Scale Level")
+      )
+    # Return the visualization
+    mh_chart
   })
 }
 
