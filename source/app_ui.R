@@ -30,10 +30,10 @@ ui <- navbarPage(
                     h1("Introduction to Project:"),
                     strong("Amidst that many social injustices that have created trauma and affected different lives of folks; contemporarily, a pandemic, the Coronavirus or COVID-19, 
                            has also played a role in impacting the lives and wellbeing of families from all around the world. COVID-19 has definitely taken a toll on the economy, 
-                           wellbeing, and different aspects of human development. <br> However, with this being a global issue affecting human lives, we can correlate its adverse effects 
+                           wellbeing, and different aspects of human development. However, with this being a global issue affecting human lives, we can correlate its adverse effects 
                            on humans. That means through a lens of data science, there has been the potential of COVID statistically increasing or declining the quality of life of 
                            different individuals. While hearing and learning more about the symptoms of the Coronavirus: fevers or chills, cough, fatigue, sore throat, the new loss 
-                           of taste or smell, etc.  Although it can be seen that many of these symptoms remain on the more physical side, the pandemic as a whole seemingly has also 
+                           of taste or smell, etc. Although it can be seen that many of these symptoms remain on the more physical side, the pandemic as a whole seemingly has also 
                            affected the individual's experiences and communications with one another. In turn, the Coronavirus has its effects on the mental and wellbeing of an 
                            individual as well. Different laws within each country were imposed such as the mask mandate, social distancing, travel bans, and much more which resulted 
                            in limited interactions. As a repercussion of these limiting forces, it takes causes negative effects to different families being unable to see each other 
