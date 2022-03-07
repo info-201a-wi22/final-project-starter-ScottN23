@@ -21,7 +21,7 @@ mental_health_chart <- tabPanel(
       ),
       mainPanel(
          plotlyOutput("mh_chart"),
-         p(" ")
+         p("In this chart we decided to go with a side by side bar graph in order to discover the impacts of COVID-19 on varying categories of mental health on individuals. Users are given the option to select between different mental health categories, allowing users to see the impacts of COVID-19 on a particular aspect of a person's mental health on a scale of 0 (not affected at all) to 5 (heavily affected).")
       )
    )
 )

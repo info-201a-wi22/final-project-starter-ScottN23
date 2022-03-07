@@ -30,14 +30,12 @@ server <- function(input, output) {
     }
     
     # Draw the box plot with the specified country
-    vsm_box_plot <- plot_ly(COVID19_vsm_box, x = ~socialize_min, y = ~covid_status, type = 'box') %>%
-      layout(title = "COVID-19 Status and Virtual Socialized Minutes", xaxis = list(title = "Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"), hoverinfo = "x")
+    vsm_box_plot <- plot_ly(COVID19_vsm_box, x = ~socialize_min, y = ~covid_status, type = 'box', color = ~covid_status) %>%
+      layout(title = "COVID-19 Status and Virtual Socialized Minutes", xaxis = list(title = "Virtual Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"), hoverinfo = "x")
     
     # Returns box plot
     return(vsm_box_plot)
   })
-  
-  
   
   # Mental health output chart
   output$mh_chart <- renderPlotly({
