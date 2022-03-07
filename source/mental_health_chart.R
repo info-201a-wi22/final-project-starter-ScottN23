@@ -9,7 +9,7 @@ COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stri
 mental_health_input <- selectInput(
    inputId = "mental", 
    label = "Mental Health", 
-   choices = c("Stress", "Isolation", "Depression", "WorryHealth", "WorryFinances")
+   choices = c("Stress", "Isolation", "Depression", "WorryHealth", "WorryFinances", "Tiredness", "DifficultyConcentrating")
 )
 
 

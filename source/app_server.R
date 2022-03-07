@@ -47,9 +47,11 @@ server <- function(input, output) {
           mutate(covid_status = covid_status == 1) %>%
           summarize(Stress = mean(stress, na.rm = TRUE),
                     Isolation = mean(isolation, na.rm = TRUE),
-                    Depression = mean(depression2, na.rm = TRUE),
+                    Depression = mean(depression1, na.rm = TRUE),
                     WorryHealth = mean(worry_health, na.rm = TRUE),
-                    WorryFinances = mean(worry_finances, na.rm = TRUE))
+                    WorryFinances = mean(worry_finances, na.rm = TRUE),
+                    Tiredness = mean(depression4, na.rm = TRUE),
+                    DifficultyConcentrating = mean(depression7, na.rm = TRUE))
       
       mh_chart <- plot_ly(
           data = COVID19_mh_data,
@@ -59,8 +61,7 @@ server <- function(input, output) {
           type = "bar"
       ) %>%
           layout(
-              title = "Annual CO2 Emission (Total)",
-              xaxis = list(title = input$mental),
+              title = "Mental Health Severity Level",
               yaxis = list(title = "Scale Level")
           )
       # Return the visualization
