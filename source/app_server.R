@@ -31,7 +31,7 @@ server <- function(input, output) {
     }
     # Draw the box plot with the specified country
     covid_socialize <- plot_ly(COVID19_vsm_chart, x = ~socialize_min, y = ~covid_status, type = 'box') %>%
-      layout(title = "COVID-19 Status: Virtual Socialized Minutes", xaxis = list(title = "Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"))
+      layout(title = "COVID-19 Status and Virtual Socialized Minutes", xaxis = list(title = "Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"))
     
     # Returns box plot
     return(covid_socialize)
@@ -67,7 +67,7 @@ server <- function(input, output) {
       mh_chart
   })
   
-  #physical exercise scatter plot 
+  # Physical exercise scatter plot 
   output$exercise_scatter_plot <- renderPlotly({
     COVID19_exercise_data <- COVID19_data %>%
       group_by(covid_status) %>%
