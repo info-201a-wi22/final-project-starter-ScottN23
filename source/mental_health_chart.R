@@ -6,10 +6,10 @@ COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stri
 
 
 ## Widget
-mental_health_input <- checkboxGroupInput(
+mental_health_input <- selectInput(
    inputId = "mental", 
    label = "Mental Health", 
-   choices =  choices = list("Stress" = 1, "Isolation" = 2, "Depression" = 3, "Health Worry" = 4, "Finance Worry" = 5)
+   choices = c("Stress", "Isolation", "Depression", "WorryHealth", "WorryFinances")
 )
 
 
