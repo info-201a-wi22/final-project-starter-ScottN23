@@ -10,6 +10,7 @@
 library(shiny)
 source("virtual_social_chart.R")
 source("mental_health_chart.R")
+source("physical_exercise_chart.R")
 
 ui <- navbarPage(
   
@@ -29,5 +30,6 @@ ui <- navbarPage(
            ),
   ),
   virtual_social_chart,
-  mental_health_chart
+  mental_health_chart,
+  physical_exercise_chart
 )
