@@ -18,7 +18,7 @@ virtual_social_chart <- tabPanel(
     # Show a box plot of the generated distribution
     mainPanel(
       plotlyOutput("vsm_box"),
-      p("")
+      p("In this chart we decided to go with a box plot in order to discover the relationship between virtual socialized minutes in a day and a persons covid status. Users are given the option to select between showing the box plot showing both people with covid and people without covid or a specific covid status. This allows users to see the distribution of virtual socialized minutes alongside specific covid statuses.")
     )
   )
 )

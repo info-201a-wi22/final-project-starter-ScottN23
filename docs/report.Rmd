@@ -47,14 +47,19 @@ The researchers stated in their original article that the sample of this study w
 <br /> As a result, by comparing variable 4 and 5, we can make an educated assumption that COVID is more likely to inflict negative feelings rather than positive.**
 
 ## Findings.
+For the Socialization Chart, our group was able to conduct the following information from the data. Those who were contracted COVID-19, folks with "true", had a smaller range between 0 to 700 minutes of socialization. However, for folks who have not contracted COVID-19, folks with "false", there is a range of 0 to 1000 minutes of socialization. 
 
 ## Discussion.
+An implication within our Physical Exercise Chart that tied to the data with folks with 0 amounts of walk could potentially connect to the fact that some individuals have not left there houses entirely. This factor would affect both sides of those who did and did not contract COVID-19. The data that we have looked at 
 
 ## Conclusions.
 
-## Acknowledgements
 
-## References,
+## Acknowledgements
+As a group, we would like to acknowledge and thank “Boston College daily sleep and well-being survey data during early phase of the COVID-19 pandemic” compiled by Tony Cunningham, Eric Fields, and Elizabeth Kensinger from Boston College. For their resources and allowing us to further construct different data from it. While doing so, we are able to create more conclusive information and further our own thinking about this particular project. We would also like to thank the creators of the Data Science Project: Design Brief, for the insight and information that was given to us since it gave us inspiration on where and what datasets were possible to find.
+
+## References
+“Boston College daily sleep and well-being survey data during early phase of the COVID-19 pandemic” compiled by Tony Cunningham, Eric Fields, and Elizabeth Kensinger from Boston College.
 
 ## Appendices
 
