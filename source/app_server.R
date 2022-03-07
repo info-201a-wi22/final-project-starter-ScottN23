@@ -6,7 +6,6 @@ library(dplyr)
 # Imports table from Covid19 dataset
 COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 
-
 # Define server logic required to draw a histogram
 server <- function(input, output) {
   
@@ -16,25 +15,26 @@ server <- function(input, output) {
       select(covid_status, socialize_min)
     
     # Data Wrangling: Remove NA's from columns in use and turn 0s and 1s to true/false
-    COVID19_vsm_chart <- COVID19_data_cleaned %>%
+    COVID19_vsm_box <- COVID19_data_cleaned %>%
       group_by(covid_status) %>%
       filter(!is.na(covid_status), !is.na(socialize_min)) %>%
       mutate(covid_status = covid_status == 1)
     
     # Selects correct chart output
     if(input$social == 2) {
-      COVID19_vsm_chart <- COVID19_vsm_chart %>%
+      COVID19_vsm_box <- COVID19_vsm_box %>%
         filter(covid_status == TRUE)
     } else if (input$social == 3) {
-      COVID19_vsm_chart <- COVID19_vsm_chart %>%
+      COVID19_vsm_box <- COVID19_vsm_box %>%
         filter(covid_status == FALSE)
     }
+    
     # Draw the box plot with the specified country
-    covid_socialize <- plot_ly(COVID19_vsm_chart, x = ~socialize_min, y = ~covid_status, type = 'box') %>%
-      layout(title = "COVID-19 Status and Virtual Socialized Minutes", xaxis = list(title = "Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"))
+    vsm_box_plot <- plot_ly(COVID19_vsm_box, x = ~socialize_min, y = ~covid_status, type = 'box') %>%
+      layout(title = "COVID-19 Status and Virtual Socialized Minutes", xaxis = list(title = "Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"), hoverinfo = "x")
     
     # Returns box plot
-    return(covid_socialize)
+    return(vsm_box_plot)
   })
   
   
