@@ -84,7 +84,7 @@ server <- function(input, output) {
              xaxis = list(title = "Total steps taken"),
              yaxis = list(title = "COVID-19 Status"))
     
-    # Returns box plot
+    # Returns scatter plot
     return(physical_exercise)
   })
 }
