@@ -5,7 +5,7 @@ library(dplyr)
 
 # Imports table from Covid19 dataset
 COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
-
+COVID19_demographics <- read.csv("../data/COVID19_demographics_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
@@ -39,7 +39,7 @@ server <- function(input, output) {
   
   
   
-  # Mental health output chart
+  # Mental health chart
   output$mh_chart <- renderPlotly({
       COVID19_mh_data <- COVID19_data %>%
           group_by(covid_status) %>%
@@ -47,9 +47,11 @@ server <- function(input, output) {
           mutate(covid_status = covid_status == 1) %>%
           summarize(Stress = mean(stress, na.rm = TRUE),
                     Isolation = mean(isolation, na.rm = TRUE),
-                    Depression = mean(depression2, na.rm = TRUE),
+                    Depression = mean(depression1, na.rm = TRUE),
                     WorryHealth = mean(worry_health, na.rm = TRUE),
-                    WorryFinances = mean(worry_finances, na.rm = TRUE))
+                    WorryFinances = mean(worry_finances, na.rm = TRUE),
+                    Tiredness = mean(depression4, na.rm = TRUE),
+                    DifficultyConcentrating = mean(depression7, na.rm = TRUE))
       
       mh_chart <- plot_ly(
           data = COVID19_mh_data,
@@ -59,8 +61,7 @@ server <- function(input, output) {
           type = "bar"
       ) %>%
           layout(
-              title = "Annual CO2 Emission (Total)",
-              xaxis = list(title = input$mental),
+              title = "Mental Health Severity Level",
               yaxis = list(title = "Scale Level")
           )
       # Return the visualization
@@ -86,6 +87,27 @@ server <- function(input, output) {
     
     # Returns scatter plot
     return(exercise_scatter_plot)
+  })
+  
+  # Sleep Quality chart (grouped by ages)
+  output$sq_chart <- renderPlotly({
+    
+    COVID19_age_data <- COVID19_data %>%
+      select(sub_id, age1)
+    
+    mh_chart <- plot_ly(
+      data = COVID19_mh_data,
+      x = input$mental,
+      y = ~.data[[input$mental]],
+      color = ~covid_status,
+      type = "bar"
+    ) %>%
+      layout(
+        title = "Mental Health Severity Level",
+        yaxis = list(title = "Scale Level")
+      )
+    # Return the visualization
+    mh_chart
   })
 }
 
