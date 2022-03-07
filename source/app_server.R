@@ -21,7 +21,7 @@ server <- function(input, output) {
       filter(!is.na(covid_status), !is.na(socialize_min)) %>%
       mutate(covid_status = covid_status == 1)
     
-    # 
+    # Selects correct chart output
     if(input$social == 2) {
       COVID19_vsm_chart <- COVID19_vsm_chart %>%
         filter(covid_status == TRUE)
