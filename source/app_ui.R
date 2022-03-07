@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(shinyWidgets)
 source("virtual_social_chart.R")
 source("mental_health_chart.R")
 source("physical_exercise_chart.R")
@@ -16,6 +17,12 @@ ui <- navbarPage(
   
   title = "Can't Sleep Through The Pandemic",
   tabPanel("Introduction",
+           setBackgroundColor(
+             color = "ghostwhite",
+             gradient = c("linear", "radial"),
+             direction = c("bottom", "top", "right", "left"),
+             shinydashboard = FALSE
+           ),
            fluidRow(
              column(4,
                     img(src = "https://media.giphy.com/media/kaIJGG8lNC3u5DM3tg/giphy.gif"),
