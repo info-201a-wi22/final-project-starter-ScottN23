@@ -76,7 +76,7 @@ server <- function(input, output) {
       select(steps)
 
     # Draw the scatter plot 
-    physical_exercise <- plot_ly(COVID19_exercise_data,
+    exercise_scatter_plot <- plot_ly(COVID19_exercise_data,
                                  x = ~steps,
                                  y = ~covid_status,
                                  type = 'scatter') %>%
@@ -85,7 +85,7 @@ server <- function(input, output) {
              yaxis = list(title = "COVID-19 Status"))
     
     # Returns scatter plot
-    return(physical_exercise)
+    return(exercise_scatter_plot)
   })
 }
 
