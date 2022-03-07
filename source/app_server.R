@@ -3,11 +3,11 @@ library(plotly)
 library(ggplot2)
 library(dplyr)
 
-# Imports table from Covid19 dataset
+# Imports table from COVID19 dataset
 COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 COVID19_demographics <- read.csv("../data/COVID19_demographics_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 
-# Define server logic required to draw a histogram
+
 server <- function(input, output) {
   
   output$vsm_box <- renderPlotly({
@@ -68,6 +68,8 @@ server <- function(input, output) {
       mh_chart
   })
   
+  
+  
   # Physical exercise scatter plot 
   output$exercise_scatter_plot <- renderPlotly({
     COVID19_exercise_data <- COVID19_data %>%
@@ -89,25 +91,54 @@ server <- function(input, output) {
     return(exercise_scatter_plot)
   })
   
+  
+  
   # Sleep Quality chart (grouped by ages)
   output$sq_chart <- renderPlotly({
     
-    COVID19_age_data <- COVID19_data %>%
-      select(sub_id, age1)
+    COVID19_age_data <- COVID19_demographics %>%
+      select(sub_id, age)
     
-    mh_chart <- plot_ly(
-      data = COVID19_mh_data,
-      x = input$mental,
-      y = ~.data[[input$mental]],
+    COVID19_sleep_data <- COVID19_data %>%
+      inner_join(COVID19_age_data, by = "sub_id")
+    
+    
+    if(input$covid == 1) {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(covid_status == FALSE)
+    } else if (input$covid == 2) {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(covid_status == TRUE)
+    }
+    
+    if(input$age == 1) {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 18 & age <= 24)
+    } else if (input$age == 2) {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 25 & age <= 64)
+    } else {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 65)
+    }
+    COVID19_sleep_data <- COVID19_sleep_data %>%
+      select(age, TST)
+    
+    # Create visualization
+    sq_chart <- plot_ly(
+      data = COVID19_sleep_data,
+      x = age,
+      y = TST,
       color = ~covid_status,
-      type = "bar"
+      type = "scatter",
+      mode = "lines+markers"
     ) %>%
       layout(
-        title = "Mental Health Severity Level",
-        yaxis = list(title = "Scale Level")
+        title = "Sleep Quality",
+        yaxis = list(title = "Hours")
       )
     # Return the visualization
-    mh_chart
+    sq_chart
   })
 }
 
