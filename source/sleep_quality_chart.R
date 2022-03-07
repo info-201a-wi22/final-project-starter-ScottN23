@@ -7,9 +7,9 @@ COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stri
 
 ## Widget
 sleep_input <- selectInput(
-   inputId = "", 
-   label = "", 
-   choices = c("")
+   inputId = "sleep_quality", 
+   label = "Sleep", 
+   choices = c("Total Sleep Time", )
 )
 
 

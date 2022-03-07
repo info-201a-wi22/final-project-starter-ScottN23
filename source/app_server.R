@@ -39,7 +39,7 @@ server <- function(input, output) {
   
   
   
-  # Mental health output chart
+  # Mental health chart
   output$mh_chart <- renderPlotly({
       COVID19_mh_data <- COVID19_data %>%
           group_by(covid_status) %>%
