@@ -2,14 +2,18 @@ library(shiny)
 library(ggplot2)
 library(plotly)
 
-COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
-
 
 ## Widget
-sleep_input <- selectInput(
-   inputId = "", 
-   label = "", 
-   choices = c("")
+covid_input <- radioButtons(
+   inputID = "covid",
+   label = "Contracted Covid",
+   choices = list("Negative" = 1, "Positive" = 2, "Both" = 3), 
+   selected = 1)
+
+age_input <- selectInput(
+   inputId = "age", 
+   label = "Age groups", 
+   choices = c("18 - 24", "25 - 64", "65 and over")
 )
 
 
@@ -19,7 +23,8 @@ mental_health_chart <- tabPanel(
    "Sleep Quality",
    sidebarLayout(
       sidebarPanel(
-         sleep_input
+         covid_input,
+         age_input
       ),
       mainPanel(
          plotlyOutput("sq_chart"),
