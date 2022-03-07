@@ -29,7 +29,7 @@ ui <- navbarPage(
                     h1("Introduction to Project:"),
                     strong("Contemporarily, a pandemic, the Coronavirus or COVID-19, has affected the lives and wellbeing of families from all around the world. 
                     This quarter, our group was dedicated on finding the influence of COVID-19 on indivudals. Here, we researched dataset from 
-                    Boston College daily sleep and well-being survey data during early phase of the COVID-19 pandemic", which was compiled by 
+                    Boston College daily sleep and well-being survey data during early phase of the COVID-19 pandemic, which was compiled by 
                     Tony Cunningham, Eric Fields, and Elizabeth Kensinger from Boston College. From our findings, we found data that connected COVID-19 
                     to different mental health problems such as stress levels or different attributes of physical health being affected like sleep quality."),
              ),
