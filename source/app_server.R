@@ -66,4 +66,26 @@ server <- function(input, output) {
       # Return the visualization
       mh_chart
   })
+  
+  #physical exercise scatter plot 
+  output$exercise_scatter_plot <- renderPlotly({
+    COVID19_exercise_data <- COVID19_data %>%
+      group_by(covid_status) %>%
+      filter(!is.na(covid_status)) %>%
+      mutate(covid_status = covid_status == 1) %>%
+      select(steps)
+
+    # Draw the scatter plot 
+    physical_exercise <- plot_ly(COVID19_exercise_data,
+                                 x = ~steps,
+                                 y = ~covid_status,
+                                 type = 'scatter') %>%
+      layout(title = "COVID-19 Status and daily steps",
+             xaxis = list(title = "Total steps taken"),
+             yaxis = list(title = "COVID-19 Status"))
+    
+    # Returns scatter plot
+    return(physical_exercise)
+  })
 }
+
