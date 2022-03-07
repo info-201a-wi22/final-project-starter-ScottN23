@@ -8,7 +8,7 @@
 #
 
 library(shiny)
-source("Socialize Chart.R")
+source("virtual_social_chart.R")
 source("mental_health_chart.R")
 
 ui <- navbarPage(
