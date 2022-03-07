@@ -1,25 +1,25 @@
 library(shiny)
 library(ggplot2)
 library(plotly)
-
+library(dplyr)
 
 ## Widget
 covid_input <- radioButtons(
-   inputID = "covid",
+   "covid",
    label = "Contracted Covid",
    choices = list("Negative" = 1, "Positive" = 2, "Both" = 3), 
    selected = 1)
 
-age_input <- selectInput(
+age_input <- radioButtons(
    inputId = "age", 
    label = "Age groups", 
-   choices = c("18 - 24", "25 - 64", "65 and over")
+   choices = list("18 - 24" = 1, "25 - 64" = 2, "65 and over" = 3)
 )
 
 
 
 ## Visualization page
-mental_health_chart <- tabPanel(
+sleep_quality_chart <- tabPanel(
    "Sleep Quality",
    sidebarLayout(
       sidebarPanel(
