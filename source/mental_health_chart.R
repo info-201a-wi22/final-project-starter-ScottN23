@@ -12,8 +12,6 @@ mental_health_input <- selectInput(
    choices = c("Stress", "Isolation", "Depression", "WorryHealth", "WorryFinances")
 )
 
-
-
 # Visualization page
 mental_health_chart <- tabPanel(
    "Mental Health",
