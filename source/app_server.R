@@ -94,7 +94,7 @@ server <- function(input, output) {
   
   
   
-  # Sleep Quality chart negative (grouped by ages)
+  # Sleep Quality chart (grouped by ages)
   output$sq_chart <- renderPlotly({
     
     COVID19_age_data <- COVID19_demographics %>%
