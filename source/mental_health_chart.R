@@ -25,3 +25,4 @@ mental_health_chart <- tabPanel(
       )
    )
 )
+

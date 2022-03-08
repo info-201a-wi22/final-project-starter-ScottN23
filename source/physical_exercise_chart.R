@@ -22,3 +22,4 @@ physical_exercise_chart <- tabPanel(
     )
   )
 )
+

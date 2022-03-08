@@ -18,7 +18,7 @@ ui <- navbarPage(
   title = "Can't Sleep Through The Pandemic",
   tabPanel("Introduction",
            setBackgroundColor(
-             color = "LightSkyBlue",
+             color = "PowderBlue",
              gradient = c("linear", "radial"),
              direction = c("bottom", "top", "right", "left"),
              shinydashboard = FALSE
