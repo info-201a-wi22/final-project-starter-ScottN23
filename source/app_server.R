@@ -3,11 +3,11 @@ library(plotly)
 library(ggplot2)
 library(dplyr)
 
-# Imports table from Covid19 dataset
+# Imports table from COVID19 dataset
 COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 COVID19_demographics <- read.csv("../data/COVID19_demographics_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 
-# Define server logic required to draw a histogram
+
 server <- function(input, output) {
   
   output$vsm_box <- renderPlotly({
@@ -16,25 +16,32 @@ server <- function(input, output) {
       select(covid_status, socialize_min)
     
     # Data Wrangling: Remove NA's from columns in use and turn 0s and 1s to true/false
-    COVID19_vsm_chart <- COVID19_data_cleaned %>%
+    COVID19_vsm_box <- COVID19_data_cleaned %>%
       group_by(covid_status) %>%
       filter(!is.na(covid_status), !is.na(socialize_min)) %>%
       mutate(covid_status = covid_status == 1)
     
     # Selects correct chart output
     if(input$social == 2) {
-      COVID19_vsm_chart <- COVID19_vsm_chart %>%
+      COVID19_vsm_box <- COVID19_vsm_box %>%
         filter(covid_status == TRUE)
     } else if (input$social == 3) {
-      COVID19_vsm_chart <- COVID19_vsm_chart %>%
+      COVID19_vsm_box <- COVID19_vsm_box %>%
         filter(covid_status == FALSE)
     }
+    
     # Draw the box plot with the specified country
-    covid_socialize <- plot_ly(COVID19_vsm_chart, x = ~socialize_min, y = ~covid_status, type = 'box') %>%
-      layout(title = "COVID-19 Status and Virtual Socialized Minutes", xaxis = list(title = "Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"))
+    vsm_box_plot <- plot_ly(COVID19_vsm_box, 
+                            x = ~socialize_min, 
+                            y = ~covid_status, type = 'box', 
+                            color = ~covid_status, 
+                            hoverinfo = "x") %>%
+      layout(title = "COVID-19 Status and Virtual Socialized Minutes", 
+             xaxis = list(title = "Virtual Socialized Minutes (Day of Survey)"), 
+             yaxis = list(title = "Contracted Covid"))
     
     # Returns box plot
-    return(covid_socialize)
+    return(vsm_box_plot)
   })
   
   
@@ -68,6 +75,8 @@ server <- function(input, output) {
       mh_chart
   })
   
+  
+  
   # Physical exercise scatter plot 
   output$exercise_scatter_plot <- renderPlotly({
     COVID19_exercise_data <- COVID19_data %>%
@@ -89,25 +98,50 @@ server <- function(input, output) {
     return(exercise_scatter_plot)
   })
   
+  
+  
   # Sleep Quality chart (grouped by ages)
   output$sq_chart <- renderPlotly({
     
-    COVID19_age_data <- COVID19_data %>%
-      select(sub_id, age1)
+    COVID19_age_data <- COVID19_demographics %>%
+      select(sub_id, age)
     
-    mh_chart <- plot_ly(
-      data = COVID19_mh_data,
-      x = input$mental,
-      y = ~.data[[input$mental]],
+    COVID19_sleep_data <- COVID19_data %>%
+      filter(!is.na(covid_status)) %>%
+      inner_join(COVID19_age_data, by = "sub_id")
+
+    if(input$age == 1) {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 18, age <= 24)
+    } else if (input$age == 2) {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 25, age <= 64)
+    } else {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 65)
+    }
+    COVID19_sleep_data <- COVID19_sleep_data %>%
+      mutate(covid_status = covid_status == 1) %>%
+      group_by(age, covid_status) %>%
+      summarize(Total_Sleep_Time = mean(TST, na.rm = TRUE))
+      
+    
+     # Create visualization
+    sq_chart <- plot_ly(
+      data = COVID19_sleep_data,
+      x = ~age,
+      y = ~Total_Sleep_Time,
       color = ~covid_status,
       type = "bar"
-    ) %>%
+      ) %>%
       layout(
-        title = "Mental Health Severity Level",
-        yaxis = list(title = "Scale Level")
+        title = "Sleep Time Based on Age",
+        barmode = "group",
+        xaxis = list(title = "Age"),
+        yaxis = list(title = "Hours")
       )
     # Return the visualization
-    mh_chart
+    sq_chart
   })
 }
 
