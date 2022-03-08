@@ -47,12 +47,32 @@ The researchers stated in their original article that the sample of this study w
 <br /> As a result, by comparing variable 4 and 5, we can make an educated assumption that COVID is more likely to inflict negative feelings rather than positive.**
 
 ## Findings.
-For the Socialization Chart, our group was able to conduct the following information from the data. Those who were contracted COVID-19, folks with "true", had a smaller range between 0 to 700 minutes of socialization. However, for folks who have not contracted COVID-19, folks with "false", there is a range of 0 to 1000 minutes of socialization. 
+Under the Socialization tab, our group was able to conduct the following information from the data. Those who were contracted COVID-19, folks with "true", had a smaller range between 0 to 700 minutes of socialization. However, for folks who have not contracted COVID-19, folks with "false", there is a range of 0 to 1000 mines of socialization. We also realized that the interquartile range,  in terms of minutes of socialization is the same for people with and without COVID. 
 
+From the Sleep Quality tab, we are able to find that most people from age 18 to 24 does not meet the 8 hours sleep requirement, and that there is not a clear indication as to whether COVID status would affect the length of sleep. Most people from age 25 to 64 does not meet the recommended 8 hours of sleep. There is also not a clear indication as to whether COVID status would affect the length of sleep as some age groups reported that they sleep more without COVID while others reported that they sleep less. For those whose age is 65 and over, we can see a general decline in sleep time despite their COVID status, in fact, two out of three age groups reported to sleep longer with COVID infection.
+
+According to the Physical Exercise tab, we find that people who contracted COVID take 58 to 19.5k steps while those are not contracted with COVID take 200 to 122.203K steps. 
+
+Finally, in the Mental Health tab, we discovered that for people who contracted COVID, the average stress level is 4.518771 while for people who are not, reported an average stress level of 4.120059. The average Isolation level for people with COVID is 4.417808 while those without is 4.239642. The average depression level for people with COVID is 1.10274 while those without is 0.8012025. The average level that people with COVID worry for health is 5.520548 while those without is 4.643837. The average level that people with COVID worry for finances is 3.863014 while those without is 3.707424. The average level of tiredness for people with COVID is 1.479452 while those without is 1.06986.
+   
+ 
 ## Discussion.
 An implication within our Physical Exercise Chart that tied to the data with folks with 0 amounts of walk could potentially connect to the fact that some individuals have not left there houses entirely. This factor would affect both sides of those who did and did not contract COVID-19. The data that we have looked at 
 
+Furthermore, what's interesting is that the interquartile range and the median for socializing time is the same for people with and without COVID while the range for socializing time is drastically different. This might be because people who are not COVID infected can have more energy to socialize and feels less discomfort when they talk, while people with COVID have less energy. At the same time, most people like to socialize in between 0-150 minutes to maximize happiness. 
+
+Another important inference that we had that potentially explains why COVID has little to no impact to sleep length is because it varies by case. While some people may experience a milder symptom such as tiredness, they tend to sleep more; others may experience more severe symptoms that lowers their sleep quality. Most people however, regardless of their age and COVID status do not sleep sufficiently, this may be due to work obligations. For people who age 65 and above, we could see a decrease in sleep length this might be because they tend to take more naps during the day so that they feel the need to sleep less at night.
+
+Last but not least, it could be anticipated that people contracted with COVID tend to have more negative feelings than those who are healthy. People who are contracted are facing unprecedented challenges that can be stressful, overwhelming, and cause strong emotions. Public health actions, such as social distancing, are necessary to reduce the spread of COVID-19, but they can make us feel isolated and lonely and can increase stress and anxiety that negatively affects mental health. 
+
 ## Conclusions.
+From the Socialization tab, we are able to conclude that COVID infection could affect the range of minutes that people socialize virtually but did not affect the number of people who likes to socialize from zero to sixty minutes. In this case, people who are contracted with COVID are less willing to socialize beyond 150 minutes comparing to those who are not contracted with COVID.
+
+From the Sleep Quality tab, we can conclude that COVID infection does not have a clear impact on the length of sleep through observing several age groups. 
+
+Through the Physical Exercise tab, we can conclude that people who are infected with COVID have significantly less physical exercise in comparison to those who are not infected. 
+
+From the Mental Health tab, we can reach the conclusion that people who contracted COVID has more negative feelings that undermines mental health comparing to those who are not contracted with COVID. 
 
 
 ## Acknowledgements
