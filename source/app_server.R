@@ -32,11 +32,13 @@ server <- function(input, output) {
     
     # Draw the box plot with the specified country
     vsm_box_plot <- plot_ly(COVID19_vsm_box, x = ~socialize_min, y = ~covid_status, type = 'box', color = ~covid_status) %>%
-      layout(title = "COVID-19 Status and Virtual Socialized Minutes", xaxis = list(title = "Virtual Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"), hoverinfo = "x")
+      layout(title = "COVID-19 Status and Virtual Socialized Minutes", xaxis = list(title = "Virtual Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"))
     
     # Returns box plot
     return(vsm_box_plot)
   })
+  
+  
   
   # Mental health chart
   output$mh_chart <- renderPlotly({
@@ -92,52 +94,86 @@ server <- function(input, output) {
   
   
   
-  # Sleep Quality chart (grouped by ages)
-  output$sq_chart <- renderPlotly({
+  # Sleep Quality chart negative (grouped by ages)
+  output$sqn_chart <- renderPlotly({
     
     COVID19_age_data <- COVID19_demographics %>%
       select(sub_id, age)
     
     COVID19_sleep_data <- COVID19_data %>%
-      inner_join(COVID19_age_data, by = "sub_id")
-    
-    
-    if(input$covid == 1) {
-      COVID19_sleep_data <- COVID19_sleep_data %>%
-        filter(covid_status == FALSE)
-    } else if (input$covid == 2) {
-      COVID19_sleep_data <- COVID19_sleep_data %>%
-        filter(covid_status == TRUE)
-    }
+      inner_join(COVID19_age_data, by = "sub_id") %>%
+      filter(covid_status == FALSE)
     
     if(input$age == 1) {
       COVID19_sleep_data <- COVID19_sleep_data %>%
-        filter(age >= 18 & age <= 24)
+        filter(age >= 18, age <= 24)
     } else if (input$age == 2) {
       COVID19_sleep_data <- COVID19_sleep_data %>%
-        filter(age >= 25 & age <= 64)
+        filter(age >= 25, age <= 64)
     } else {
       COVID19_sleep_data <- COVID19_sleep_data %>%
         filter(age >= 65)
     }
     COVID19_sleep_data <- COVID19_sleep_data %>%
-      select(age, TST)
+      group_by(age) %>%
+      summarize(Total_Sleep_Time = mean(TST, na.rm = TRUE))
+      
     
     # Create visualization
-    sq_chart <- plot_ly(
+    sqn_chart <- plot_ly(
       data = COVID19_sleep_data,
-      x = age,
-      y = TST,
-      color = ~covid_status,
-      type = "scatter",
-      mode = "lines+markers"
-    ) %>%
+      x = ~age,
+      y = ~Total_Sleep_Time,
+      type = "bar"
+      ) %>%
       layout(
-        title = "Sleep Quality",
+        title = "Sleep Quality (Negative)",
+        xaxis = list(title = ""),
         yaxis = list(title = "Hours")
       )
     # Return the visualization
-    sq_chart
+    sqn_chart
+  })
+  
+  # Sleep Quality chart positive (grouped by ages)
+  output$sqp_chart <- renderPlotly({
+    
+    COVID19_age_data <- COVID19_demographics %>%
+      select(sub_id, age)
+    
+    COVID19_sleep_data <- COVID19_data %>%
+      inner_join(COVID19_age_data, by = "sub_id") %>%
+      filter(covid_status == TRUE)
+
+    if(input$age == 1) {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 18, age <= 24)
+    } else if (input$age == 2) {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 25, age <= 64)
+    } else {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 65)
+    }
+    COVID19_sleep_data <- COVID19_sleep_data %>%
+      group_by(age) %>%
+      summarize(Total_Sleep_Time = mean(TST, na.rm = TRUE))
+    
+    
+    # Create visualization
+    sqp_chart <- plot_ly(
+      data = COVID19_sleep_data,
+      x = ~age,
+      y = ~Total_Sleep_Time,
+      type = "bar"
+    ) %>%
+      layout(
+        title = "Sleep Quality (Positive)",
+        xaxis = list(title = ""),
+        yaxis = list(title = "Hours")
+      )
+    # Return the visualization
+    sqp_chart
   })
 }
 

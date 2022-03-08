@@ -55,10 +55,7 @@ ui <- navbarPage(
            ),
   ),
   virtual_social_chart,
-  mental_health_chart,
-<<<<<<< HEAD
-  sleep_quality_chart
-=======
-  physical_exercise_chart
->>>>>>> b011948129bce83ea9d575b8ced98ddbb9d6271b
+  sleep_quality_chart,
+  physical_exercise_chart,
+  mental_health_chart
 )
