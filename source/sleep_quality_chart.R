@@ -27,9 +27,8 @@ sleep_quality_chart <- tabPanel(
          age_input
       ),
       mainPanel(
-         plotlyOutput("sqn_chart"),
-         p(" "),
-         plotlyOutput("sqp_chart"),
+         plotlyOutput("sq_chart"),
+         p(" ")
       )
    )
 )
