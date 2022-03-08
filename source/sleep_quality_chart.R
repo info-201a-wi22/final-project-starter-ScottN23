@@ -29,7 +29,7 @@ sleep_quality_chart <- tabPanel(
       mainPanel(
          plotlyOutput("sq_chart"),
          p(" "),
-         p("In this chart, we decided to go with a side by side bar chart representing a group of negative
+         p("In this chart, we decided to go with a side by side bar graph representing a group of negative
            and positive individuals with COVID-19 alongside options for age groups in order to discover the
            impacts of COVID-19 on a specific age group's length of sleep. We wanted to see if COVID-19 
            affected a person's sleep and decided that having specific age ranges takes away another variable
