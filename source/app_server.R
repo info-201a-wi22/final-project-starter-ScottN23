@@ -31,7 +31,7 @@ server <- function(input, output) {
     }
     
     # Draw the box plot with the specified country
-    vsm_box_plot <- plot_ly(COVID19_vsm_box, x = ~socialize_min, y = ~covid_status, type = 'box', color = ~covid_status) %>%
+    vsm_box_plot <- plot_ly(COVID19_vsm_box, x = ~socialize_min, y = ~covid_status, type = 'box', color = ~covid_status, hoverinfo = "x") %>%
       layout(title = "COVID-19 Status and Virtual Socialized Minutes", xaxis = list(title = "Virtual Socialized Minutes (Day of Survey)"), yaxis = list(title = "Contracted Covid"))
     
     # Returns box plot
