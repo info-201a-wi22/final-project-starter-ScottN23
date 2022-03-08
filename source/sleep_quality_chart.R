@@ -29,13 +29,13 @@ sleep_quality_chart <- tabPanel(
       mainPanel(
          plotlyOutput("sq_chart"),
          p(" "),
-         p("In this chart, we decided to go with two sets of bar graphs representing a group of negative 
-           and positive individuals with COVID-19 alongside options for age groups in order to discover 
-           the impacts of COVID-19 on a specific age group's length of sleep. We wanted to see if COVID-19 
-           affected a person's sleep and decided that having specific age ranges allows us to see specifically 
-           where COVID-19 has impacted individuals. As a result, we are provided the options to select between 
-           three different age groups: 18-24, 25-64, and 65 and over, revealing the age group's average sleep 
-           time at specific ages.")
+         p("In this chart, we decided to go with a side by side bar chart representing a group of negative
+           and positive individuals with COVID-19 alongside options for age groups in order to discover the
+           impacts of COVID-19 on a specific age group's length of sleep. We wanted to see if COVID-19 
+           affected a person's sleep and decided that having specific age ranges takes away another variable
+           that may effect our understanding of the impacts of COVID-19. As a result, we are provided the 
+           options to select between three different age groups: 18-24, 25-64, and 65 and over, revealing 
+           the age group's average sleep time at specific ages.")
       )
    )
 )
