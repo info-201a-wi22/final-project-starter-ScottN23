@@ -4,11 +4,9 @@ library(markdown)
 summary_page <- tabPanel(
   "Summary",
   fluidRow(
-    h1("Summary Takeaways"),
     column(
-      10,
-      align = "center",
-      offset = 2,
+      8, align = "center", offset = 2,
+      h1("Summary Takeaways"),
       p("Looking at the relationship between COVID-19 and virtual socialized minutes in a day, we initially thought 
         that COVID-19 would heavily lessen a person's amount of time spent socializing. Yet, after looking at the 
         charts, it was revealed that even though the range of minutes spent virtually socializing for people who don't 
