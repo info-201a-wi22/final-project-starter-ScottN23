@@ -5,10 +5,10 @@ account: scottng
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5812837
-bundleId: 5662616
+bundleId: 5663420
 url: https://scottng.shinyapps.io/Final_Project/
-when: 1646847337.62127
-lastSyncTime: 1646847337.62127
+when: 1646858381.37871
+lastSyncTime: 1646858381.37871
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: .RData|Chart 1.R|Chart 2.R|Chart 3.R|data_access.R|README.md|Table.R

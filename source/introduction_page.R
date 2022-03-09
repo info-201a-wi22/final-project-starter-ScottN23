@@ -22,6 +22,16 @@ intro_page <- tabPanel(
          inclined in creating more accessible data to understand how the pandemic was either negatively or positively affecting aspects of lives. Here, we researched
          dataset from Boston College daily sleep and well-being survey data during the early phase of the COVID-19 pandemic, which was compiled by Tony Cunningham,
          Eric Fields, and Elizabeth Kensinger from Boston College. From our findings, we found data that potentially connected COVID-19 to different mental health."),
+      br(),
+      h1("Questions of Focus"),
+      br(),
+      p("What is the impact of COVID-19 on the number of hours of sleep adults are able to obtain?"),
+      br(),
+      p("What's the correlation between physical health such as daily steps and COVID-19?"),
+      br(),
+      p("What's the impact of COVID-19 on an individual's socialized minutes such as online interactions via calls, voice chats, videos, etc?"),
+      br(),
+      p("What's the impact of COVID-19 on different aspects of mental health?"),
     ),
   ),
   fluidRow(
