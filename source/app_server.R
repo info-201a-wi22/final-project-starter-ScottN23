@@ -78,12 +78,12 @@ server <- function(input, output) {
 
     # Draw the scatter plot 
     exercise_scatter_plot <- plot_ly(COVID19_exercise_data,
-                                 x = ~steps,
-                                 y = ~covid_status,
+                                 x = ~covid_status,
+                                 y = ~steps,
                                  type = 'scatter') %>%
       layout(title = "COVID-19 Status and daily steps",
-             xaxis = list(title = "Total steps taken"),
-             yaxis = list(title = "COVID-19 Status"))
+             xaxis = list(title = "Covid-19 Status"),
+             yaxis = list(title = "Total steps taken"))
     
     # Returns scatter plot
     return(exercise_scatter_plot)
