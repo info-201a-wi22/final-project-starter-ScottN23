@@ -13,7 +13,7 @@ covid_input <- radioButtons(
 age_input <- radioButtons(
    inputId = "age", 
    label = "Age groups", 
-   choices = list("18 - 24" = 1, "25 - 64" = 2, "65 and over" = 3),
+   choices = list("18 - 24" = 1, "25 - 40" = 2, "41 - 64" = 3, "65 and over" = 4),
    selected = 1
 )
 
@@ -29,13 +29,12 @@ sleep_quality_chart <- tabPanel(
       mainPanel(
          plotlyOutput("sq_chart"),
          p(" "),
-         p("In this chart, we decided to go with a side by side bar graph representing a group of negative
-           and positive individuals with COVID-19 alongside options for age groups in order to discover the
-           impacts of COVID-19 on a specific age group's length of sleep. We wanted to see if COVID-19 
-           affected a person's sleep and decided that having specific age ranges takes away another variable
-           that may effect our understanding of the impacts of COVID-19. As a result, we are provided the 
-           options to select between three different age groups: 18-24, 25-64, and 65 and over, revealing 
-           the age group's average sleep time at specific ages.")
+         p("We decided to employ a side by side bar chart to show the average sleep time between people with
+            COVID and without grouped by ages. The purpose of this chart is to discover the impacts of COVID-19 
+            on a specific age group's length of sleep. We wanted to see if COVID-19 affects a person's sleep time
+            and if different age groups experience different level of severity because of COVID. Another thing to
+            note is that because of the limitation of dataset, not every age has data collected for people who 
+            contracted COVID.")
       )
    )
 )
