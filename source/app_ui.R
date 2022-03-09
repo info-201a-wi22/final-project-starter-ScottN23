@@ -4,14 +4,14 @@ source("virtual_social_chart.R")
 source("mental_health_chart.R")
 source("sleep_quality_chart.R")
 source("physical_exercise_chart.R")
+source("summary_takeaways.R")
 
 # Creates UI for Web App
 ui <- navbarPage(
-  
   title = "Can't Sleep Through The Pandemic",
   tabPanel("Introduction",
            setBackgroundColor(
-             color = "LightSkyBlue",
+             color = "PowderBlue",
              gradient = c("linear", "radial"),
              direction = c("bottom", "top", "right", "left"),
              shinydashboard = FALSE
@@ -41,11 +41,10 @@ ui <- navbarPage(
                            of contracting COVID-19. This quarter, our group was dedicated to finding the influence of COVID-19 on an individual's social and mental health. We were 
                            inclined in creating more accessible data to understand how the pandemic was either negatively or positively affecting aspects of lives. Here, we researched 
                            dataset from Boston College daily sleep and well-being survey data during the early phase of the COVID-19 pandemic, which was compiled by Tony Cunningham, 
-                           Eric Fields, and Elizabeth Kensinger from Boston College. From our findings, we found data that potentially connected COVID-19 to different mental health 
-                           problems such as stress levels or different attributes of physical health being affected like sleep quality."),
+                           Eric Fields, and Elizabeth Kensinger from Boston College. From our findings, we found data that potentially connected COVID-19 to different mental health"),
              ),
            ),
-  ),
+        ),
   virtual_social_chart,
   sleep_quality_chart,
   physical_exercise_chart,
