@@ -48,5 +48,6 @@ ui <- navbarPage(
   virtual_social_chart,
   sleep_quality_chart,
   physical_exercise_chart,
-  mental_health_chart
+  mental_health_chart,
+  summary_page
 )
