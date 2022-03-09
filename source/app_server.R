@@ -115,7 +115,10 @@ server <- function(input, output) {
         filter(age >= 18, age <= 24)
     } else if (input$age == 2) {
       COVID19_sleep_data <- COVID19_sleep_data %>%
-        filter(age >= 25, age <= 64)
+        filter(age >= 25, age <= 40)
+    } else if (input$age == 3) {
+      COVID19_sleep_data <- COVID19_sleep_data %>%
+        filter(age >= 41, age <= 64) 
     } else {
       COVID19_sleep_data <- COVID19_sleep_data %>%
         filter(age >= 65)
@@ -125,7 +128,6 @@ server <- function(input, output) {
       group_by(age, covid_status) %>%
       summarize(Total_Sleep_Time = mean(TST, na.rm = TRUE))
       
-    
      # Create visualization
     sq_chart <- plot_ly(
       data = COVID19_sleep_data,
@@ -135,10 +137,11 @@ server <- function(input, output) {
       type = "bar"
       ) %>%
       layout(
-        title = "Sleep Time Based on Age",
+        title = "Average Sleep Time Based on Age",
         barmode = "group",
-        xaxis = list(title = "Age"),
-        yaxis = list(title = "Hours")
+        legend=list(title=list(text='<b> Contracted Covid </b>')),
+        xaxis = list(title = "Age", dtick = 1),
+        yaxis = list(title = "Hours", range = c(0,10))
       )
     # Return the visualization
     sq_chart
