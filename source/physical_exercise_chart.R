@@ -12,7 +12,7 @@ physical_exercise_chart <- tabPanel(
     sidebarPanel(
       radioButtons("steps",
         label = h3("Covid-19 status"),
-        choices = list("Overview" = 1, "covid positive" = 2, "covid negative" = 3),
+        choices = list("Overview" = 1, "Covid Positive" = 2, "Covid Negative" = 3),
         selected = 1
       ),
     ),
