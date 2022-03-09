@@ -7,7 +7,7 @@ library(dplyr)
 COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 COVID19_demographics <- read.csv("../data/COVID19_demographics_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 
-
+# Server side for Web App
 server <- function(input, output) {
   
   output$vsm_box <- renderPlotly({

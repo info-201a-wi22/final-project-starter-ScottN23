@@ -1,12 +1,3 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library(shinyWidgets)
 source("virtual_social_chart.R")
@@ -14,6 +5,7 @@ source("mental_health_chart.R")
 source("sleep_quality_chart.R")
 source("physical_exercise_chart.R")
 
+# Creates UI for Web App
 ui <- navbarPage(
   
   title = "Can't Sleep Through The Pandemic",

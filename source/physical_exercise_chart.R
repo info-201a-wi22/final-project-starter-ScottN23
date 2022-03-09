@@ -4,7 +4,7 @@ library(ggplot2)
 
 physical_exercise_chart <- tabPanel(
   
-  #Title for this page
+  # Title for this page
   title = "Physical exercise",
   
   # Creates select box for country and slider for year range
