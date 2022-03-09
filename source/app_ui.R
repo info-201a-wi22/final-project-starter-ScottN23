@@ -25,16 +25,16 @@ ui <- navbarPage(
              shinydashboard = FALSE
            ),
            fluidRow(
-             column(4,
+             column(4, align="center",
                     img(src = "https://media.giphy.com/media/kaIJGG8lNC3u5DM3tg/giphy.gif"),
                     ),
              
-             column(4,
+             column(4, align="center", 
                     img(src = "https://media.giphy.com/media/Zm17XBTlVfjacXg44z/giphy.gif"),
                     ),
            ),
            fluidRow(
-             column(8,
+             column(8, align="center", 
                     h1("Introduction to Project:"),
                     strong("Amidst that many social injustices that have created trauma and affected different lives of folks; contemporarily, a pandemic, the Coronavirus or COVID-19, 
                            has also played a role in impacting the lives and wellbeing of families from all around the world. COVID-19 has definitely taken a toll on the economy, 
@@ -57,11 +57,12 @@ ui <- navbarPage(
   sleep_quality_chart,
   physical_exercise_chart,
   mental_health_chart,
+  summary_page,
   tabPanel(
     "Report",
     fluidRow(
       column(
-        12,
+        8, align="center", 
         includeHTML("report.html")
       ),
     ),
