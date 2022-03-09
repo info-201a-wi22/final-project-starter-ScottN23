@@ -24,13 +24,14 @@ summary_page <- tabPanel(
         average sleep time. A low average sleep time isn't necessarily a consequence of COVID-19."),
       br(),
       p("3) In terms of the relationship between COVID and participants exercise level, we anticipated to see some decline 
-        in the daily exercise steps from those who tested positive. Our data visualization supported this hypothesis: participants 
-        who contracted COVID had very concentrated step counts of under 20k, those who did not have COVID had doubled the steps, 
-        and a few outlier data points tripled and quadrupled the steps of the covid-positive group. However, our data set only allows 
-        us to point the cause of difference to COVID-19 as a general idea and not its specific complications — from this data set, we 
-        do not know if the decrease in steps was resulted from participants’ physical illness hence the lack of energy to walk or the set 
-        of government quarantine policies which resulted in the lack of places to be and chances to get out the door. Overall it's safe to say
-        that COVID-19 had significant impact on a person's daily exercise level."),
+        in the daily exercise steps from those who tested positive. Our data visualization supported this hypothesis: 
+        participants who contracted COVID had very concentrated step counts of under 20k, those who did not have COVID had 
+        doubled the steps, and a few outlier data points tripled and quadrupled the steps of the covid-positive group. 
+        However, our data set only allows us to point the cause of difference to COVID-19 as a general idea and not its 
+        specific complications from this data set, we do not know if the decrease in steps was resulted from participants' 
+        physical illness hence the lack of energy to walk or the set of government quarantine policies which resulted in 
+        the lack of places to be and chances to get out the door. Overall it's safe to say that COVID-19 had significant 
+        impact on a person's daily exercise level."),
       br(),
       p("4) Mental well-being is another aspect in which COVID-19 has a negative impact on. After examining the bar chart
         related to mental health, we found that people who contracted COVID-19 are likely to suffer from mental health

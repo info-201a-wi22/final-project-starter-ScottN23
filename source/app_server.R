@@ -42,7 +42,7 @@ server <- function(input, output) {
       layout(
         title = "COVID-19 Status and Virtual Socialized Minutes",
         legend = list(title = list(text = "<b> Contracted Covid </b>")),
-        xaxis = list(title = "Virtual Socialized Minutes (Day of Survey)"),
+        xaxis = list(title = "Virtual Socialized Minutes (Day of Survey)", range = c(0, 1005)),
         yaxis = list(title = "Contracted Covid")
       )
 
