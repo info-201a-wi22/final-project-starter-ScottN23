@@ -22,7 +22,7 @@ age_input <- radioButtons(
 
 # Visualization page
 sleep_quality_chart <- tabPanel(
-  "Sleep Quality",
+  "Sleep Time",
   sidebarLayout(
     sidebarPanel(
       age_input
@@ -31,10 +31,10 @@ sleep_quality_chart <- tabPanel(
       plotlyOutput("sq_chart"),
       br(),
       p("We chose to employ a side by side bar chart to show the average sleep time between different ages,
-            grouped by people's COVID status. The purpose of this chart is to discover the impacts of COVID-19
-            on a specific age group's length of sleep. We wanted to see if COVID-19 affects an indiviual's sleep time
-            and if different age groups are affected more or less because of COVID. One thing to note is that because
-            of the limitation of dataset, not every age has data collected on people who contracted COVID.")
+        grouped by people's COVID status. The purpose of this chart is to discover the impacts of COVID-19
+        on a specific age group's length of sleep. We wanted to see if COVID-19 affects an indiviual's sleep time
+        and if different age groups are affected more or less because of COVID-19. One thing to note is that because
+        of the limitation of dataset, not every age has data collected on the sleep time of people who contracted COVID.")
     )
   )
 )
