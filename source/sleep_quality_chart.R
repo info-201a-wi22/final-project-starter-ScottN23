@@ -5,16 +5,17 @@ library(plotly)
 
 # Widget
 covid_input <- radioButtons(
-   "covid",
-   label = "Contracted Covid",
-   choices = list("Negative" = 1, "Positive" = 2, "Both" = 3), 
-   selected = 1)
+  "covid",
+  label = "Contracted Covid",
+  choices = list("Negative" = 1, "Positive" = 2, "Both" = 3),
+  selected = 1
+)
 
 age_input <- radioButtons(
-   inputId = "age", 
-   label = "Age groups", 
-   choices = list("18 - 24" = 1, "25 - 40" = 2, "41 - 64" = 3, "65 and over" = 4),
-   selected = 1
+  inputId = "age",
+  label = "Age groups",
+  choices = list("18 - 24" = 1, "25 - 40" = 2, "41 - 64" = 3, "65 and over" = 4),
+  selected = 1
 )
 
 

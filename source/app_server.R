@@ -71,8 +71,9 @@ server <- function(input, output) {
           type = "bar"
       ) %>%
           layout(
-              title = "Mental Health Severity Level",
-              yaxis = list(title = "Scale Level")
+              title = "COVID-19 Effect on Mental Health Severity",
+              legend=list(title=list(text='<b> Contracted Covid </b>')),
+              yaxis = list(title = "Scale", range = c(0,5))
           )
       # Return the visualization
       mh_chart
@@ -103,7 +104,7 @@ server <- function(input, output) {
   
   
   
-  # Sleep Quality chart (grouped by ages)
+  # Average Sleep Time chart (based on age)
   output$sq_chart <- renderPlotly({
     
     COVID19_age_data <- COVID19_demographics %>%
