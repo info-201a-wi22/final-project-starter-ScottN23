@@ -28,6 +28,9 @@ server <- function(input, output) {
     } else if (input$social == 3) {
       COVID19_vsm_box <- COVID19_vsm_box %>%
         filter(covid_status == FALSE)
+    } else if (input$social == 4) {
+      COVID19_vsm_box <- COVID19_vsm_box %>%
+        mutate(covid_status = "combined")
     }
     
     # Draw the box plot with the specified country
