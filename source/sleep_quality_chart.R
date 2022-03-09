@@ -29,7 +29,7 @@ sleep_quality_chart <- tabPanel(
     ),
     mainPanel(
       plotlyOutput("sq_chart"),
-      p(" "),
+      hr(),
       p("We chose to employ a side by side bar chart to show the average sleep time between different ages,
             grouped by people's COVID status. The purpose of this chart is to discover the impacts of COVID-19
             on a specific age group's length of sleep. We wanted to see if COVID-19 affects an indiviual's sleep time
