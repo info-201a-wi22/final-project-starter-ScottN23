@@ -61,7 +61,7 @@ ui <- navbarPage(
     fluidRow(
       column(
         12,
-        HTML(report())
+        includeHTML("report.html")
       ),
     ),
   )
