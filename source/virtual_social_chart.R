@@ -11,7 +11,7 @@ virtual_social_chart <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       radioButtons("social", label = h3("Contracted Covid"),
-                   choices = list("All" = 1, "True" = 2, "False" = 3), 
+                   choices = list("Both" = 1, "True" = 2, "False" = 3, "Combined" = 4), 
                    selected = 1),
     ),
     
@@ -22,8 +22,9 @@ virtual_social_chart <- tabPanel(
       p("In this chart, we decided to go with a box plot in order to discover the relationship between 
         virtual socialized minutes calculated by totaling the minutes a person spends doing virtual/phone
         socialization in a day and a persons covid status. Users are given the option to select between
-        box plots showing both people with and without covid or a specific covid status. This allows users
-        to see the distribution of virtual socialized minutes alongside specific covid statuses.")
+        box plots showing both people with and without covid, a specific covid status, or a combined plot
+        of all individuals. This allows users to see the distribution of virtual socialized minutes alongside 
+        specific covid statuses.")
     )
   )
 )
