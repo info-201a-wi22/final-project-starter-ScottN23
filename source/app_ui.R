@@ -13,6 +13,7 @@ source("virtual_social_chart.R")
 source("mental_health_chart.R")
 source("sleep_quality_chart.R")
 source("physical_exercise_chart.R")
+source("summary_takeaways.R")
 
 ui <- navbarPage(
   title = "Can't Sleep Through The Pandemic",
