@@ -4,8 +4,8 @@ library(ggplot2)
 library(dplyr)
 
 # Imports table from COVID19 dataset
-COVID19_data <- read.csv("../data/COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
-COVID19_demographics <- read.csv("../data/COVID19_demographics_survey.csv", header = TRUE, stringsAsFactors = FALSE)
+COVID19_data <- read.csv("COVID19_daily_survey.csv", header = TRUE, stringsAsFactors = FALSE)
+COVID19_demographics <- read.csv("COVID19_demographics_survey.csv", header = TRUE, stringsAsFactors = FALSE)
 
 # Server side for Web App
 server <- function(input, output) {
