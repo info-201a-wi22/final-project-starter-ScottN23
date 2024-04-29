@@ -1,7 +1,4 @@
 <h1 align="center"><strong>Can't Sleep Through the Pandemic</strong></h1>
-
-## Published Site
-
 The link to our published web application: https://scottng.shinyapps.io/Final_Project/
 
 *P01: Project Proposal*: [Project Proposal Title - Edit Me!](./docs/p01-proposal.md) 
