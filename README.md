@@ -12,8 +12,8 @@ The link to our published web application: https://scottng.shinyapps.io/Final_Pr
 * Patricia Ma
 * Siwen Yue
 
-*P01: Project Proposal*: [Project Proposal Title - Edit Me!](./docs/p01-proposal.md) 
-
+## Project Proposal
+*P01: Project Proposal*: [Can't Sleep Through the Pandemic](./docs/p01-proposal.md) 
 
 |Project Directories | Brief Description|
 |---------------| -----------------|
