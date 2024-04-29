@@ -1,5 +1,9 @@
-# Final Project Repository
-**INFO-201: _Foundational Skills For Data Science_ (Winter 2022)**
+<h1 align="center"><strong>Can't Sleep Through the Pandemic</strong></h1>
+<h2 align="center"><strong>Shedding light on how COVID-19 impacts sleep health through data-driven research.</strong></h2>
+
+## Published Site
+
+The link to our published web application: https://scottng.shinyapps.io/Final_Project/
 
 *P01: Project Proposal*: [Project Proposal Title - Edit Me!](./docs/p01-proposal.md) 
 
