@@ -1,5 +1,4 @@
 <h1 align="center"><strong>Can't Sleep Through the Pandemic</strong></h1>
-<h2 align="center"><strong>Shedding light on how COVID-19 impacts sleep health through data-driven research.</strong></h2>
 
 ## Published Site
 
